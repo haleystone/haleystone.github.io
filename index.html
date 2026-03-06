@@ -15,16 +15,6 @@
             font-weight: 600;
         }
 
-        .topnav {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin: 10px 0 26px 0;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #dddddd;
-            font-size: 0.98rem;
-        }
-
         .hero {
             display: flex;
             align-items: flex-start;
@@ -203,20 +193,15 @@
     <div id="ContainerDiv">
         <div id="MainDiv">
 
-            <div class="topnav">
-                <a href="#about">About</a>
-                <a href="#publications">Publications</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-
             <section class="hero" id="title">
                 <div class="hero-text">
                     <h1 class="hero-name">Haley Stone</h1>
                     <p class="hero-role">Postdoctoral Research Assistant, University of Glasgow</p>
                     <p class="hero-tagline">
-                        Computational virology and infectious disease modelling, with a focus on graph-based learning,
-                        genomic data integration, and prediction in sparse spatiotemporal systems.
+                        Computational virology and infectious disease modelling, with a focus on graph-based learning
+                        and genomic data integration for pathogen prediction. My current research focuses on predicting
+                        viraltissue tropism using graph neural networks and developing text-mining pipelines to
+                        construct large virus–tissue interaction datasets.
                     </p>
                     <p>
                         <a href="https://www.gla.ac.uk/schools/infectionimmunity/staff/haleystone/" target="_blank">
@@ -236,16 +221,19 @@
             </section>
 
             <h1 class="separator" id="about">About</h1>
+           <p class="section-intro">
+               My work spans multiple modelling techniques, including mechanistic epidemic models (SEIR),
+               agent-based simulations, phylogenetic and genomic analysis, and graph representation learning.
+               I am particularly interested in combining heterogeneous data sources within graph-based
+               frameworks to enable prediction in sparse or incomplete surveillance settings.
+           </p>
             <p class="section-intro">
-                I am a Postdoctoral Research Assistant at the University of Glasgow, where I work on AI-driven epidemic
-                modelling, graph-based inference, and computational approaches to infectious disease prediction.
-            </p>
-            <p class="section-intro">
-                My research integrates mechanistic epidemiological models, graph neural networks, and genomic data to
-                study disease transmission in complex and data-limited settings. I completed my PhD at the Kirby
-                Institute at UNSW, where I developed mechanistic models for COVID-19 vaccination strategy evaluation,
-                agent-based models for synthetic contact matrix generation in aged care settings, and phylogenetic
-                approaches to investigate clustering in human avian influenza cases.
+                Currently, I am developing graph neural network models to predict viral tissue tropism, alongside
+                text-mining pipelines to construct large virus–tissue interaction datasets. Previously, during my
+                PhD at the Kirby Institute (UNSW), I developed epidemic models to evaluate COVID-19 vaccination
+                strategies, generated synthetic contact matrices for aged-care facilities using agent-based
+                simulation, and applied phylogenetic approaches to investigate clustering in human avian
+                influenza cases.
             </p>
 
             <h1 class="separator" id="publications">Selected Publications</h1>
@@ -261,7 +249,7 @@
                         <a href="javascript:void(0)" onclick="toggleAbstract('abs1')">Abstract</a>
                     </div>
                     <div id="abs1" class="abstract">
-                        Pathogen genome data offers valuable structure for spatial models, but its utility is limited by incomplete sequencing coverage. We propose a probabilistic framework for inferring genetic distances between unsequenced cases and known sequences using time-aware evolutionary distance modelling.
+                        Pathogen genome data offers valuable structure for spatial models, but its utility is limited by incomplete sequencing coverage. We propose a probabilistic framework for inferring genetic distances between unsequenced cases and known sequences within defined transmission chains, using time-aware evolutionary distance modeling. The method estimates pairwise divergence from collection dates and observed genetic distances, enabling biologically plausible imputation grounded in observed divergence patterns, without requiring sequence alignment or known transmission chains. Applied to highly pathogenic avian influenza A/H5 cases in wild birds in the United States, this approach supports scalable, uncertainty-aware augmentation of genomic datasets and enhances the integration of evolutionary information into spatiotemporal modeling workflows.
                     </div>
                 </li>
 
@@ -275,14 +263,62 @@
                         <a href="javascript:void(0)" onclick="toggleAbstract('abs2')">Abstract</a>
                     </div>
                     <div id="abs2" class="abstract">
-                        We propose BLUE, a genomic-aware heterogeneous graph framework integrating ecological, spatial, and genetic information to improve avian influenza outbreak forecasting in sparse surveillance settings.
+                        Accurate forecasting of Avian Influenza Virus (AIV) outbreaks within wild bird populations necessitates models that account for complex, multi-scale transmission patterns driven by diverse factors. While conventional spatiotemporal epidemic models are robust for human-centric diseases, they rely on spatial homophily and diffusive transmission between geographic regions. This simplification is incomplete for AIV as it neglects valuable genomic information critical for capturing dynamics like high-frequency reassortment and lineage turnover at the case level (e.g., genetic descent across regions), which are essential for understanding AIV spread. To address these limitations, we systematically formulate the AIV forecasting problem and propose a Bi-Layer genomic-aware heterogeneous graph fusion pipeline. This pipeline integrates genetic, spatial, and ecological data to achieve highly accurate outbreak forecasting. It 1) defines a multi-layered graph structure incorporating information from diverse sources and multiple layers (case and location), 2) applies cross-relation smoothing to smooth information flow across edge types, 3) performs graph fusion that preserves critical structural patterns backed by theoretical spectral guarantees, and 4) forecasts future outbreaks using an autoregressive graph sequence model to capture transmission dynamics. To support research, we release the Avian-US dataset, which provides comprehensive genetic, spatial, and ecological data on US avian influenza outbreaks. BLUE demonstrates superior performance over existing baselines, highlighting the efficacy of integrating multi-layer information for infectious disease forecasting. The code is available at: this https URL.
+
                     </div>
                 </li>
+            </ul>
 
+            <h1 class="separator" id="preprints">Preprints</h1>
+
+            <ul class="pub-list">
                 <li>
                     <div class="pub-title">From Ecological Connectivity to Outbreak Risk: A Heterogeneous Graph Network for Epidemiological Reasoning under Sparse Spatiotemporal Data</div>
                     <div class="pub-authors"><b>Haley Stone</b>, Jing Du, Yang Yang, Ashna Desai, Rebecca Dawson, Hao Xue, David Heslop et al.</div>
                     <div class="pub-venue">arXiv preprint, 2026</div>
+                    <div class="publinks">
+                        <a href="https://arxiv.org/abs/2601.09738" target="_blank">Paper</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs2')">Abstract</a>
+                    </div>
+                    <div id="abs2" class="abstract">
+                       Estimating population-level prevalence and transmission dynamics of wildlife pathogens can be challenging, partly because surveillance data is sparse, detection-driven, and unevenly sequenced. Using highly pathogenic avian influenza A/H5 clade 2.3.4.4b as a case study, we develop zooNet, a graph-based epidemiological framework that integrates mechanistic transmission simulation, metadata-driven genetic distance imputation, and spatiotemporal graph learning to reconstruct outbreak dynamics from incomplete observations. Applied to wild bird surveillance data from the United States during 2022, zooNet recovered coherent spatiotemporal structure despite intermittent detections, revealing sustained regional circulation across multiple migratory flyways. The framework consistently identified counties with ongoing transmission weeks to months before confirmed detections, including persistent activity in northeastern regions prior to documented re-emergence. These signals were detectable even in areas with sparse sequencing and irregular reporting. 
+                        These results show that explicitly representing ecological processes and inferred genomic connectivity within a unified graph structure allows persistence and spatial risk structure to be inferred from detection-driven wildlife surveillance data.
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pub-title">Generating a Contact Matrix for Aged Care Settings in Australia: an Agent-Based Model Study</div>
+                    <div class="pub-authors"><b>Haley Stone</b>, C. Raina MacIntyre, Mohana Kunasekaran, Chris Poulos, David Heslop</div>
+                    <div class="pub-venue">arXiv preprint, 2025</div>
+                    <div class="publinks">
+                        <a href="https://arxiv.org/abs/2512.03866" target="_blank">Paper</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs2')">Abstract</a>
+                    </div>
+                    <div id="abs2" class="abstract">
+                        Understanding infectious disease transmission in institutional settings requires modelling approaches that can represent how contacts arise from structured routines, roles, and spatial constraints. In aged care facilities, interactions are shaped by care delivery processes, staff scheduling, and resident mobility, producing contact patterns that differ fundamentally from those assumed in population-level models. However, standard contact matrices used in epidemiological modelling are typically derived from general population surveys and do not capture these institutional mechanisms.
+                        This study develops an agent-based modelling framework to generate high-resolution contact matrices for aged care facilities by simulating task-driven behaviour, staff workflows, and movement through shared spaces. Rather than prescribing contact structure, interactions emerge endogenously from scheduled activities and proximity during task execution. The model is parameterised using collected activity-diary data from aged care workers and is implemented with behavioural logic decoupled from the physical layout, allowing adaptation to alternative facility designs without modifying core mechanisms.
+                        Simulation results show pronounced heterogeneity in contact patterns across resident care levels and staff shifts. Low and medium care residents exhibited substantially higher contact frequencies than high care residents, while staff working day and afternoon shifts accounted for the majority of resident–staff interactions. Temporal analyses revealed clustering of contacts around structured daily routines, including meals and communal activities. Integrating a proximity-based airborne transmission component parameterised for SARS-CoV-2 demonstrated that transmission risk was concentrated during high-contact shifts and among more mobile resident groups. Vaccination scenarios reduced predicted transmission substantially, with the greatest reductions observed when both staff and residents were vaccinated.
+                        By explicitly linking organisational processes to emergent contact structure, this framework provides a reproducible and transferable approach to contact matrix generation for institutional environments. The model supports more realistic transmission modelling and offers a basis for evaluating targeted infection control strategies in high-risk care settings.
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="pub-title">DENcode: A Model for Haplotype-Informed Transmission Probability of Dengue Virus</div>
+                    <div class="pub-authors">Sachith Maduranga, Braulio Mark Valencia Arroyo, Chathurani Sigera, Praveen Weeratunga, Deepika Fernando, Senaka Rajapakse, Andrew R. Lloyd, Rowena A. Bull, <b>Haley Stone*</b>, and Chaturaka Rodrigo*</div>
+                    <div class="pub-venue">bioRxiv preprint, 2026</div>
+                    <div style="font-size:0.9em; color:#666;">
+                        * Co-senior authorship / equal contribution as supervising authors
+                    </div>
+                    <div class="publinks">
+                        <a href="https://www.biorxiv.org/content/10.64898/2026.02.26.708194v1" target="_blank">Paper</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs2')">Abstract</a>
+                    </div>
+                    <div id="abs2" class="abstract">
+                        Dengue virus transmission networks are often only partially resolved, due to gaps in sampling, unobserved mosquito-mediated transmission, and using methods (phylogenetics) that describe evolutionary relatedness but not explicit, probabilistic transmission links between individual infections. We developed DENcode, a framework to estimate the relative likelihood of vector-mediated transmission between pairs of dengue cases by combining a temperature- and time-modulated epidemiological kernel, which captures the extrinsic incubation period and human infectiousness, with a phylogenetically informed genetic similarity kernel derived from patristic distances between viral haplotypes or consensus sequences. Validation with a real-life dataset of 90 dengue infections sampled from Colombo, Sri Lanka between 2017 - 2020 and sequenced to resolve within-host haplotypes, DENcode estimates were stable across 100 Monte Carlo iterations, yielding narrow credible intervals (median width <0.001) and consistent top-ranked transmission pairs. Sensitivity analyses using ablation experiments showed that removing either the genetic or epidemiological component substantially altered the distribution of linkage probabilities, 
+                            indicating that both contribute meaningfully to the inferred transmission structure. Serotype-specific transmission networks constructed from pairwise linkage probabilities from DENcode were analysed using degree- and path-based centrality measures at probability thresholds of 0.1 and 0.5, revealing relative importance of cases to disease transmission within the community. Haplotype-derived networks were more informative than consensus-based networks (x 3.6 and x 1.6 times more edges for DENV2 and 3 respectively). DENcode is a robust framework to explore dengue transmission within a community that provides an output of network of transmission probabilities informed by pathogen genetic similarity and clinical epidemiological parameters.
+                    </div>
+                
                 </li>
             </ul>
 
