@@ -1,0 +1,54 @@
+body,
+p,
+ul,
+ol,
+li {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.45;
+    color: #000000;
+}
+
+a,
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+#HeaderDiv,
+#SidebarDiv,
+#FooterDiv,
+#EditHistoryLinkDiv,
+#RssLinkDiv,
+#PrintLinkDiv,
+#PageLockedDiv,
+#PagePublicDiv,
+#PageInfoDiv {
+    display: none;
+}
+
+#MainDiv {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #000000;
+    page-break-after: avoid;
+}
+
+h2 {
+    border-bottom: 1px solid #999999;
+    padding-bottom: 2px;
+}
+
+img,
+pre,
+blockquote,
+table {
+    page-break-inside: avoid;
+}
