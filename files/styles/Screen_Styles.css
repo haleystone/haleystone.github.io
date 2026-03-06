@@ -250,4 +250,22 @@ a.editsectionlink {
     h2 {
         font-size: 1.3rem;
     }
+
+}
+/* Publication abstract toggle */
+
+.abstract {
+    display: none;
+    margin-top: 6px;
+    padding-left: 12px;
+    border-left: 3px solid #dddddd;
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+/* publication link spacing */
+
+.publinks a {
+    margin-right: 10px;
+    font-size: 0.95rem;
 }
