@@ -15,16 +15,107 @@
             font-weight: 600;
         }
 
-        .abstract {
-            display: none;
-            margin-top: 8px;
-            padding-left: 10px;
-            border-left: 3px solid #ddd;
-            color: #444;
+        .topnav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin: 10px 0 26px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dddddd;
+            font-size: 0.98rem;
+        }
+
+        .hero {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 32px;
+            margin: 8px 0 34px 0;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-name {
+            font-size: 2.4rem;
+            line-height: 1.15;
+            margin: 0 0 10px 0;
+            color: #111111;
+        }
+
+        .hero-role {
+            font-size: 1.15rem;
+            margin: 0 0 10px 0;
+            color: #444444;
+        }
+
+        .hero-tagline {
+            font-size: 1.02rem;
+            max-width: 650px;
+            margin: 0 0 14px 0;
+        }
+
+        .hero-links a {
+            margin-right: 14px;
+            white-space: nowrap;
+        }
+
+        .hero-photo {
+            width: 220px;
+            border: 1px solid #d8d8d8;
+            background: #f5f5f5;
+            flex-shrink: 0;
+        }
+
+        .section-intro {
+            max-width: 820px;
+        }
+
+        .pub-list {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .pub-list li {
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .pub-title {
+            font-weight: bold;
+            color: #111111;
+        }
+
+        .pub-authors {
+            margin-top: 4px;
+            color: #444444;
+        }
+
+        .pub-venue {
+            margin-top: 4px;
+            font-style: italic;
+            color: #555555;
+        }
+
+        .publinks {
+            margin-top: 6px;
         }
 
         .publinks a {
-            margin-right: 10px;
+            margin-right: 12px;
+        }
+
+        .abstract {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-left: 3px solid #d9d9d9;
+            background-color: #fafafa;
+            color: #444444;
+            font-size: 0.97rem;
         }
 
         .project-grid {
@@ -36,15 +127,15 @@
 
         .project-card {
             display: flex;
-            gap: 18px;
+            gap: 20px;
             align-items: flex-start;
             padding: 14px 0;
             border-bottom: 1px solid #dddddd;
         }
 
         .project-image {
-            width: 230px;
-            height: 145px;
+            width: 240px;
+            height: 150px;
             object-fit: cover;
             border: 1px solid #d8d8d8;
             background-color: #f5f5f5;
@@ -56,20 +147,30 @@
         }
 
         .project-content h3 {
-            margin-top: 0;
+            margin: 0 0 8px 0;
+            font-size: 1.18rem;
+        }
+
+        .project-tags {
+            color: #666666;
+            font-size: 0.92rem;
             margin-bottom: 8px;
-            font-size: 1.2rem;
         }
 
-        .project-content p {
-            margin-bottom: 0.6em;
+        .contact-links a {
+            margin-right: 14px;
+            white-space: nowrap;
         }
 
-        .project-links a {
-            margin-right: 10px;
-        }
+        @media screen and (max-width: 760px) {
+            .hero {
+                flex-direction: column-reverse;
+            }
 
-        @media screen and (max-width: 700px) {
+            .hero-photo {
+                width: 180px;
+            }
+
             .project-card {
                 flex-direction: column;
             }
@@ -77,7 +178,11 @@
             .project-image {
                 width: 100%;
                 height: auto;
-                max-height: 260px;
+                max-height: 280px;
+            }
+
+            .hero-name {
+                font-size: 2rem;
             }
         }
     </style>
@@ -92,244 +197,132 @@
             }
         }
     </script>
-
 </head>
 
 <body>
-
     <div id="ContainerDiv">
-
         <div id="MainDiv">
 
-            <a id="PageTop"></a>
-
-            <div id="PageHeaderDiv">
-                <h1 class="pagetitle" id="title">
-                    Haley Stone @ University of Glasgow
-                </h1>
+            <div class="topnav">
+                <a href="#about">About</a>
+                <a href="#publications">Publications</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
 
-            <table style="background-color:white;width:100%;">
-                <tr>
-                    <td valign="top" style="width:220px;">
-                        <img src="files/imgs/me.jpg" height="220" alt="Haley Stone profile photo">
-                    </td>
+            <section class="hero" id="title">
+                <div class="hero-text">
+                    <h1 class="hero-name">Haley Stone</h1>
+                    <p class="hero-role">Postdoctoral Research Assistant, University of Glasgow</p>
+                    <p class="hero-tagline">
+                        Computational virology and infectious disease modelling, with a focus on graph-based learning,
+                        genomic data integration, and prediction in sparse spatiotemporal systems.
+                    </p>
+                    <p>
+                        <a href="https://www.gla.ac.uk/schools/infectionimmunity/staff/haleystone/" target="_blank">
+                            Centre for Virus Research / School of Infection &amp; Immunity
+                        </a><br>
+                        Glasgow, United Kingdom
+                    </p>
+                    <p class="hero-links">
+                        <a href="mailto:Haley.Stone@glasgow.ac.uk">Email</a>
+                        <a href="https://github.com/haleystone" target="_blank">GitHub</a>
+                        <a href="https://scholar.google.com/citations?user=0LI0EDkAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                        <a href="https://orcid.org/0000-0003-1997-0042" target="_blank">ORCID</a>
+                    </p>
+                </div>
 
-                    <td style="width:20px;"></td>
+                <img src="files/imgs/me.jpg" alt="Haley Stone profile photo" class="hero-photo">
+            </section>
 
-                    <td valign="top">
-                        <p>
-                            <b>
-                                <span style="font-size:1.5em;">Haley Stone</span>
-                            </b>
-                        </p>
-
-                        <p>
-                            <b>Postdoctoral Research Assistant</b>
-                        </p>
-
-                        <p>
-                            <a href="https://www.gla.ac.uk/schools/infectionimmunity/staff/haleystone/" target="_blank">
-                                Centre for Virus Research / School of Infection & Immunity<br>
-                                University of Glasgow
-                            </a>
-                        </p>
-
-                        <p>
-                            Glasgow, United Kingdom
-                        </p>
-
-                        <p>
-                            Email: Haley.Stone@glasgow.ac.uk
-                        </p>
-                    </td>
-                </tr>
-            </table>
-
-            <h1 class="separator" id="biography">Biography</h1>
-
-            <p style="text-align:justify">
-                I am a Postdoctoral Research Assistant at the University of Glasgow, where I work on
-                AI-driven epidemic modelling, graph-based inference, and computational approaches
-                to infectious disease prediction.
-
-                My research integrates mechanistic epidemiological models, graph neural networks,
-                and genomic data to study disease transmission in complex and data-limited settings.
-
-                I completed my PhD at the Kirby Institute at UNSW, where I developed mechanistic
-                models to evaluate COVID-19 vaccination strategies, generated synthetic contact
-                matrices for aged care facilities using agent-based simulations, and applied
-                phylogenetic approaches to investigate clustering of traits in human avian
-                influenza cases.
-
-                My broader interests lie in computational biology, infectious disease dynamics,
-                and the development of data-integrated tools to support public health response.
+            <h1 class="separator" id="about">About</h1>
+            <p class="section-intro">
+                I am a Postdoctoral Research Assistant at the University of Glasgow, where I work on AI-driven epidemic
+                modelling, graph-based inference, and computational approaches to infectious disease prediction.
+            </p>
+            <p class="section-intro">
+                My research integrates mechanistic epidemiological models, graph neural networks, and genomic data to
+                study disease transmission in complex and data-limited settings. I completed my PhD at the Kirby
+                Institute at UNSW, where I developed mechanistic models for COVID-19 vaccination strategy evaluation,
+                agent-based models for synthetic contact matrix generation in aged care settings, and phylogenetic
+                approaches to investigate clustering in human avian influenza cases.
             </p>
 
-            <br>
+            <h1 class="separator" id="publications">Selected Publications</h1>
 
-            <h1 class="separator" id="research">Research Interests</h1>
-
-            <ul>
-                <li>Predictive Modelling Techniques</li>
-                <li>Graph Representation Learning</li>
-                <li>Viral Emergence and Evolution</li>
-                <li>Zoonotic Disease</li>
-            </ul>
-
-            <a href="#title">[go top]</a>
-
-            <br><br>
-
-            <h1 class="separator" id="publications">Publications</h1>
-
-            <h2>Selected Publications</h2>
-
-            <ul>
+            <ul class="pub-list">
                 <li>
-                    <p>
-                        <b>
-                            A Probabilistic Framework for Imputing Genetic Distances in Spatiotemporal Pathogen Models
-                        </b><br>
-
-                        <b>Haley Stone</b>, Jing Du, Hao Xue, Matthew Scotch,
-                        David Heslop, Andreas Züfle, C. Raina MacIntyre, Flora Salim<br>
-
-                        ACM SIGSPATIAL International Conference on Advances
-                        in Geographic Information Systems, 2025<br>
-
-                        <span class="publinks">
-                            <a href="https://dl.acm.org/doi/abs/10.1145/3748636.3762779" target="_blank">[paper]</a>
-                            <a href="https://github.com/cruiseresearchgroup/qri-genetic-distance" target="_blank">[code]</a>
-                            <a href="javascript:void(0)" onclick="toggleAbstract('abs1')">[abstract]</a>
-                        </span>
-
-                        <div id="abs1" class="abstract">
-                            Pathogen genome data offers valuable structure for spatial models, but its utility is limited by incomplete sequencing coverage. We propose a probabilistic framework for inferring genetic distances between unsequenced cases and known sequences within defined transmission chains, using time-aware evolutionary distance modeling. The method estimates pairwise divergence from collection dates and observed genetic distances, enabling biologically plausible imputation grounded in observed divergence patterns, without requiring sequence alignment or known transmission chains. Applied to highly pathogenic avian influenza A/H5 cases in wild birds in the United States, this approach supports scalable, uncertainty-aware augmentation of genomic datasets and enhances the integration of evolutionary information into spatiotemporal modeling workflows.
-                        </div>
-                    </p>
+                    <div class="pub-title">A Probabilistic Framework for Imputing Genetic Distances in Spatiotemporal Pathogen Models</div>
+                    <div class="pub-authors"><b>Haley Stone</b>, Jing Du, Hao Xue, Matthew Scotch, David Heslop, Andreas Züfle, C. Raina MacIntyre, Flora Salim</div>
+                    <div class="pub-venue">ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, 2025</div>
+                    <div class="publinks">
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3748636.3762779" target="_blank">Paper</a>
+                        <a href="https://github.com/cruiseresearchgroup/qri-genetic-distance" target="_blank">Code</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs1')">Abstract</a>
+                    </div>
+                    <div id="abs1" class="abstract">
+                        Pathogen genome data offers valuable structure for spatial models, but its utility is limited by incomplete sequencing coverage. We propose a probabilistic framework for inferring genetic distances between unsequenced cases and known sequences using time-aware evolutionary distance modelling.
+                    </div>
                 </li>
 
                 <li>
-                    <p>
-                        <b>
-                            Genomic-Informed Heterogeneous Graph Learning for
-                            Spatiotemporal Avian Influenza Outbreak Forecasting
-                        </b><br>
-
-                        Jing Du, <b>Haley Stone</b>, Yang Yang,
-                        Ashna Desai, Hao Xue, Andreas Züfle,
-                        C. Raina MacIntyre, Flora Salim<br>
-
-                        Web4Good Workshop, 2026<br>
-
-                        <span class="publinks">
-                            <a href="https://arxiv.org/pdf/2505.22692" target="_blank">[paper]</a>
-                            <a href="https://github.com/cruiseresearchgroup/BLUE" target="_blank">[code]</a>
-                            <a href="javascript:void(0)" onclick="toggleAbstract('abs2')">[abstract]</a>
-                        </span>
-
-                        <div id="abs2" class="abstract">
-                            Accurate forecasting of Avian Influenza Virus (AIV) outbreaks within wild bird populations necessitates models that account for complex, multi-scale transmission patterns driven by diverse factors. While conventional spatiotemporal epidemic models are robust for human-centric diseases, they rely on spatial homophily and diffusive transmission between geographic regions. This simplification is incomplete for AIV as it neglects valuable genomic information critical for capturing dynamics like high-frequency reassortment and lineage turnover at the case level. To address these limitations, we propose BLUE, a bi-layer genomic-aware heterogeneous graph fusion pipeline integrating genetic, spatial, and ecological data for outbreak forecasting.
-                        </div>
-                    </p>
-                </li>
-
-
-            <h2>Preprints</h2>
-
-            <ul>
-                <li>
-                    <p>
-                        <b>
-                            From Ecological Connectivity to Outbreak Risk:
-                            A Heterogeneous Graph Network for Epidemiological
-                            Reasoning under Sparse Spatiotemporal Data
-                        </b><br>
-
-                        <b>Haley Stone</b>, Jing Du, Yang Yang,
-                        Ashna Desai, Rebecca Dawson,
-                        Hao Xue, David Heslop et al.<br>
-
-                        arXiv, 2026
-                    </p>
+                    <div class="pub-title">Genomic-Informed Heterogeneous Graph Learning for Spatiotemporal Avian Influenza Outbreak Forecasting</div>
+                    <div class="pub-authors">Jing Du, <b>Haley Stone</b>, Yang Yang, Ashna Desai, Hao Xue, Andreas Züfle, C. Raina MacIntyre, Flora Salim</div>
+                    <div class="pub-venue">Web4Good Workshop, 2026</div>
+                    <div class="publinks">
+                        <a href="https://arxiv.org/pdf/2505.22692" target="_blank">Paper</a>
+                        <a href="https://github.com/cruiseresearchgroup/BLUE" target="_blank">Code</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs2')">Abstract</a>
+                    </div>
+                    <div id="abs2" class="abstract">
+                        We propose BLUE, a genomic-aware heterogeneous graph framework integrating ecological, spatial, and genetic information to improve avian influenza outbreak forecasting in sparse surveillance settings.
+                    </div>
                 </li>
 
                 <li>
-                    <p>
-                        <b>
-                            Generating a Contact Matrix for Aged Care Settings
-                            in Australia: an Agent-Based Model Study
-                        </b><br>
-
-                        <b>Haley Stone</b>, C. Raina MacIntyre,
-                        Mohana Kunasekaran, Chris Poulos,
-                        David Heslop<br>
-
-                        arXiv, 2025
-                    </p>
-                </li>
-
-                <li>
-                    <p>
-                        <b>
-                            DENcode: A Model for Haplotype-Informed Transmission Probability of Dengue Virus
-                        </b><br>
-
-                        Sachith Maduranga, Braulio Mark Valencia Arroyo, Chathurani Sigera,
-                        Praveen Weeratunga, Deepika Fernando, Senaka Rajapakse, Andrew R. Lloyd,
-                        Rowena A. Bull, <b>Haley Stone*</b>, and Chaturaka Rodrigo*<br>
-
-                        bioRxiv, 2026
-                    </p>
+                    <div class="pub-title">From Ecological Connectivity to Outbreak Risk: A Heterogeneous Graph Network for Epidemiological Reasoning under Sparse Spatiotemporal Data</div>
+                    <div class="pub-authors"><b>Haley Stone</b>, Jing Du, Yang Yang, Ashna Desai, Rebecca Dawson, Hao Xue, David Heslop et al.</div>
+                    <div class="pub-venue">arXiv preprint, 2026</div>
                 </li>
             </ul>
-
-            <a href="#title">[go top]</a>
-
-            <br><br>
 
             <h1 class="separator" id="projects">Projects</h1>
 
             <div class="project-grid">
-
                 <div class="project-card">
                     <img src="files/imgs/VTT-Net.png" alt="VTT-Net framework" class="project-image">
                     <div class="project-content">
-                        <h3>Predicting Viral Tropisms in Host Tissues using Graph Neural Networks</h3>
+                        <h3>VTT-Net</h3>
+                        <div class="project-tags">graph learning · tissue tropism · virology</div>
                         <p>
-                            VTT-Net is a graph neural network framework for modelling virus–tissue interactions and predicting tissue-level tropism from sparse observational data. The project integrates host tissue features and viral relationships to learn biologically meaningful patterns of viral tissue specificity.
+                            A graph neural network framework for modelling virus–tissue interactions and predicting
+                            tissue-level tropism from sparse observational data.
                         </p>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="files/imgs/zooNet_framework.png" alt="ZooNet project image" class="project-image">
+                    <img src="files/imgs/zooNet_framework.png" alt="ZooNet framework" class="project-image">
                     <div class="project-content">
                         <h3>ZooNet</h3>
+                        <div class="project-tags">heterogeneous graphs · outbreak forecasting · avian influenza</div>
                         <p>
-                            ZooNet is a heterogeneous graph framework for forecasting avian influenza outbreaks using ecological connectivity, genomic data, and sparse spatiotemporal surveillance information. It is designed for outbreak reasoning in complex multi-host systems.
+                            A heterogeneous graph framework for forecasting avian influenza outbreaks using ecological
+                            connectivity, genomic data, and sparse spatiotemporal surveillance information.
+                        </p>
                     </div>
                 </div>
-
-
             </div>
 
-            <a href="#title">[go top]</a>
-
-            <br><br>
-
             <h1 class="separator" id="contact">Contact</h1>
-
-            <p>
-                Email: Haley.Stone@glasgow.ac.uk<br>
-                GitHub: <a href="https://github.com/haleystone" target="_blank">github.com/haleystone</a><br>
-                Google Scholar: <a href="https://scholar.google.com/citations?user=0LI0EDkAAAAJ&hl=en" target="_blank">profile link</a><br>
-                ORCID: <a href="https://orcid.org/0000-0003-1997-0042" target="_blank">ORCID link</a>
+            <p class="contact-links">
+                <a href="mailto:Haley.Stone@glasgow.ac.uk">Email</a>
+                <a href="https://github.com/haleystone" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=0LI0EDkAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                <a href="https://orcid.org/0000-0003-1997-0042" target="_blank">ORCID</a>
             </p>
 
         </div>
-
     </div>
 
     <div id="FooterDiv">
@@ -339,7 +332,5 @@
         </div>
         <br>
     </div>
-
 </body>
-
 </html>
