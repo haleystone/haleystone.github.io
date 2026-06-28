@@ -280,3 +280,38 @@
         padding: 8px 10px;
     }
 }
+
+
+/* Publication carousel: three cards per desktop view */
+.publication-shell {
+    width: 100%;
+    overflow: visible;
+}
+
+.pub-list {
+    --publication-gap: 22px;
+    grid-auto-columns: calc((100% - (2 * var(--publication-gap))) / 3);
+    gap: var(--publication-gap);
+    width: 100%;
+    overscroll-behavior-inline: contain;
+    scroll-behavior: smooth;
+    scroll-padding-inline: 0;
+}
+
+.pub-list li {
+    width: 100%;
+    min-width: 0;
+}
+
+@media screen and (max-width: 950px) {
+    .pub-list {
+        grid-auto-columns: calc((100% - var(--publication-gap)) / 2);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .pub-list {
+        --publication-gap: 16px;
+        grid-auto-columns: 100%;
+    }
+}
