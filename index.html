@@ -463,6 +463,31 @@
         }
         const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:0.08});
         document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+        const engagementList = document.querySelector(".engagement-list");
+        const engagementLeftButton = document.querySelector(".engagement-scroll-left");
+        const engagementRightButton = document.querySelector(".engagement-scroll-right");
+        
+        function scrollEngagement(direction) {
+            if (!engagementList) return;
+        
+            engagementList.scrollBy({
+                left: direction * engagementList.clientWidth,
+                behavior: "smooth"
+            });
+        }
+        
+        if (engagementLeftButton) {
+            engagementLeftButton.addEventListener("click", () => {
+                scrollEngagement(-1);
+            });
+        }
+        
+        if (engagementRightButton) {
+            engagementRightButton.addEventListener("click", () => {
+                scrollEngagement(1);
+            });
+        }
+
     </script>
     <script type="module">
         import * as pdfjsLib from
