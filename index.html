@@ -307,6 +307,30 @@
         const navigation=document.querySelector(".site-nav");
         menuButton.addEventListener("click",()=>{const open=navigation.classList.toggle("is-open");menuButton.setAttribute("aria-expanded",String(open));});
         navigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{navigation.classList.remove("is-open");menuButton.setAttribute("aria-expanded","false");}));
+        const publicationList = document.querySelector(".pub-list");
+        const leftButton = document.querySelector(".scroll-left");
+        const rightButton = document.querySelector(".scroll-right");
+        
+        function scrollPublications(direction) {
+            if (!publicationList) return;
+        
+            publicationList.scrollBy({
+                left: direction * publicationList.clientWidth,
+                behavior: "smooth"
+            });
+        }
+        
+        if (leftButton) {
+            leftButton.addEventListener("click", () => {
+                scrollPublications(-1);
+            });
+        }
+        
+        if (rightButton) {
+            rightButton.addEventListener("click", () => {
+                scrollPublications(1);
+            });
+        }
         const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:0.08});
         document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
     </script>
