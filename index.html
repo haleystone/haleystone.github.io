@@ -332,19 +332,28 @@
                 
                         <p>ViBiom 2026 · Vilnius, Lithuania</p>
                 
-                        <div class="slide-viewer">
-                            <iframe
-                                src="assets/slides/vibiom2026.pdf#page=1&view=FitH"
-                                title="VTT-Net ViBiom 2026 slides">
-                            </iframe>
+                        <div class="presentation-viewer">
+                            <div class="presentation-slide">
+                                <canvas id="pdf-canvas"></canvas>
+                            </div>
+                        
+                            <div class="presentation-controls">
+                                <button id="previous-slide" type="button">← Previous</button>
+                        
+                                <span>
+                                    Slide <span id="current-slide">1</span>
+                                    of <span id="total-slides">–</span>
+                                </span>
+                        
+                                <button id="next-slide" type="button">Next →</button>
+                            </div>
                         </div>
-                
+                        
                         <div class="talk-links">
-                            <a
-                                href="assets/slides/vibiom2026.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                Open slides full screen
+                            <a href="assets/slides/vibiom2026.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Open full PDF
                             </a>
                         </div>
                     </div>
@@ -406,6 +415,93 @@
         }
         const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:0.08});
         document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+    </script>
+    <script type="module">
+        import * as pdfjsLib from
+            "https://cdn.jsdelivr.net/npm/pdfjs-dist@5.6.205/build/pdf.min.mjs";
+    
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdn.jsdelivr.net/npm/pdfjs-dist@5.6.205/build/pdf.worker.min.mjs";
+    
+        const pdfPath = "assets/slides/vibiom2026.pdf";
+    
+        const canvas = document.getElementById("pdf-canvas");
+        const context = canvas.getContext("2d");
+    
+        const previousButton = document.getElementById("previous-slide");
+        const nextButton = document.getElementById("next-slide");
+        const currentSlideText = document.getElementById("current-slide");
+        const totalSlidesText = document.getElementById("total-slides");
+    
+        let pdfDocument = null;
+        let currentPage = 1;
+        let rendering = false;
+    
+        async function renderPage(pageNumber) {
+            if (!pdfDocument || rendering) return;
+    
+            rendering = true;
+    
+            const page = await pdfDocument.getPage(pageNumber);
+            const container = canvas.parentElement;
+    
+            const originalViewport = page.getViewport({ scale: 1 });
+            const availableWidth = container.clientWidth;
+    
+            const scale = availableWidth / originalViewport.width;
+            const viewport = page.getViewport({ scale });
+    
+            const pixelRatio = window.devicePixelRatio || 1;
+    
+            canvas.width = Math.floor(viewport.width * pixelRatio);
+            canvas.height = Math.floor(viewport.height * pixelRatio);
+    
+            canvas.style.width = `${viewport.width}px`;
+            canvas.style.height = `${viewport.height}px`;
+    
+            context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    
+            await page.render({
+                canvasContext: context,
+                viewport
+            }).promise;
+    
+            currentSlideText.textContent = pageNumber;
+            previousButton.disabled = pageNumber === 1;
+            nextButton.disabled = pageNumber === pdfDocument.numPages;
+    
+            rendering = false;
+        }
+    
+        async function loadPresentation() {
+            pdfDocument = await pdfjsLib.getDocument(pdfPath).promise;
+            totalSlidesText.textContent = pdfDocument.numPages;
+            await renderPage(currentPage);
+        }
+    
+        previousButton.addEventListener("click", async () => {
+            if (currentPage <= 1) return;
+            currentPage--;
+            await renderPage(currentPage);
+        });
+    
+        nextButton.addEventListener("click", async () => {
+            if (currentPage >= pdfDocument.numPages) return;
+            currentPage++;
+            await renderPage(currentPage);
+        });
+    
+        window.addEventListener("resize", () => {
+            clearTimeout(window.pdfResizeTimer);
+    
+            window.pdfResizeTimer = setTimeout(() => {
+                renderPage(currentPage);
+            }, 150);
+        });
+    
+        loadPresentation().catch(error => {
+            console.error("Could not load presentation PDF:", error);
+        });
     </script>
 </body>
 </html>
