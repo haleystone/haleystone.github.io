@@ -590,6 +590,9 @@ a:hover {
     font-size: 0.85rem;
     font-weight: 700;
 }
+
+
+
 /* Embedded presentation viewer */
 
 .slides-toggle {
@@ -639,6 +642,7 @@ a:hover {
     height: 100%;
     border: 0;
 }
+
 /* Contact and footer */
 
 .contact-links {
@@ -799,6 +803,10 @@ a:hover {
 
     .project-image {
         height: 220px;
+    }
+
+    .slide-viewer {
+        height: 430px;
     }
 
     .site-footer {
