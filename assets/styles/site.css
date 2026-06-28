@@ -109,7 +109,30 @@ a:hover {
 .profile-links a:hover {
     color: var(--accent-dark);
 }
+.icon-links {
+    gap: 12px;
+}
 
+.icon-links a {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.icon-links img {
+    display: block;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.icon-links a:hover {
+    background: rgba(239, 111, 97, 0.1);
+}
 .menu-toggle {
     display: none;
     width: 42px;
@@ -734,7 +757,18 @@ a:hover {
         flex-direction: column;
         width: min(100% - 28px, 1120px);
     }
+    .icon-links {
+        grid-template-columns: repeat(5, 32px);
+        justify-content: start;
+        gap: 8px;
+        padding: 12px 8px 4px;
+    }
+    
+    .icon-links a {
+        padding: 0;
+    }
 }
+
 
 @media screen and (max-width: 640px) {
     .pub-list {
