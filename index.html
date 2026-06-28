@@ -263,83 +263,106 @@
             </div>
             <p class="scroll-hint">Scroll or drag to browse selected publications.</p>
             <br><br>
-
-            <h1 class="separator" id="engagement">Public Engagement</h1>
-
-            <p class="section-intro">
-                Selected media contributions and public communication on infectious disease,
-                virology, and pandemic preparedness.
-            </p>
             
 
             <h1 class="separator" id="engagement">Public Engagement</h1>
             
-            <div class="engagement-section reveal">
+            <div class="engagement-shell">
+                <button
+                    class="engagement-scroll-button engagement-scroll-left"
+                    type="button"
+                    aria-label="Scroll public engagement left">
+                    ←
+                </button>
             
-                <div class="engagement-video">
-                    <div class="video-wrapper">
-                        <iframe
-                            src="https://www.youtube.com/embed/Z6XY1i7eik8"
-                            title="Experts warn deadly H5N1 bird flu strain likely to arrive in Australia"
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
+                <div class="engagement-list reveal">
             
-                    <h3>Experts warn deadly H5N1 bird flu strain could arrive in Australia</h3>
+                    <!-- Video card -->
+                    <article class="engagement-card engagement-video-card">
+                        <div class="engagement-media">
+                            <iframe
+                                src="https://www.youtube.com/embed/Z6XY1i7eik8"
+                                title="Experts warn deadly H5N1 bird flu strain likely to arrive in Australia"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
             
-                    <p>
-                        ABC News interview on the threat H5N1 poses to Australian wildlife
-                        and the importance of early detection and surveillance.
-                    </p>
-                </div>
+                        <div class="engagement-card-body">
+                            <span class="engagement-type">ABC News interview</span>
             
-                <div class="engagement-articles">
+                            <h3>
+                                Experts warn deadly H5N1 bird flu strain could arrive in Australia
+                            </h3>
             
-                    <article class="engagement-article">
-                        <span>The Conversation</span>
-            
-                        <h3>
-                            Bird flu has been detected in a pig in the US. Why does that matter?
-                        </h3>
-            
-                        <p>
-                            An explanation of why infection in pigs matters for influenza
-                            evolution, reassortment and pandemic preparedness.
-                        </p>
-            
-                        <a
-                            href="https://theconversation.com/bird-flu-has-been-detected-in-a-pig-in-the-us-why-does-that-matter-242688"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Read article →
-                        </a>
+                            <p>
+                                Discussing the threat H5N1 poses to Australian wildlife and
+                                the importance of early detection and surveillance.
+                            </p>
+                        </div>
                     </article>
             
-                    <article class="engagement-article">
-                        <span>The Conversation</span>
+                    <!-- Article card -->
+                    <article class="engagement-card">
+                        <div class="engagement-card-body">
+                            <span class="engagement-type">The Conversation</span>
             
-                        <h3>
-                            Bird flu is hitting Australian poultry farms and the first human
-                            case has been reported in Victoria
-                        </h3>
+                            <h3>
+                                Bird flu has been detected in a pig in the US. Why does that matter?
+                            </h3>
             
-                        <p>
-                            An overview of the avian influenza outbreaks affecting Australian
-                            poultry and the first reported human H5N1 case in Victoria.
-                        </p>
+                            <p>
+                                Why infection in pigs matters for influenza evolution,
+                                reassortment and pandemic preparedness.
+                            </p>
             
-                        <a
-                            href="https://theconversation.com/bird-flu-is-hitting-australian-poultry-farms-and-the-first-human-case-has-been-reported-in-victoria-heres-what-we-know-230691"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Read article →
-                        </a>
+                            <a
+                                class="engagement-link"
+                                href="https://theconversation.com/bird-flu-has-been-detected-in-a-pig-in-the-us-why-does-that-matter-242688"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Read article →
+                            </a>
+                        </div>
+                    </article>
+            
+                    <!-- Article card -->
+                    <article class="engagement-card">
+                        <div class="engagement-card-body">
+                            <span class="engagement-type">The Conversation</span>
+            
+                            <h3>
+                                Bird flu is hitting Australian poultry farms and the first
+                                human case has been reported in Victoria
+                            </h3>
+            
+                            <p>
+                                An overview of the Australian poultry outbreaks and the first
+                                reported human H5N1 case in Victoria.
+                            </p>
+            
+                            <a
+                                class="engagement-link"
+                                href="https://theconversation.com/bird-flu-is-hitting-australian-poultry-farms-and-the-first-human-case-has-been-reported-in-victoria-heres-what-we-know-230691"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Read article →
+                            </a>
+                        </div>
                     </article>
             
                 </div>
+            
+                <button
+                    class="engagement-scroll-button engagement-scroll-right"
+                    type="button"
+                    aria-label="Scroll public engagement right">
+                    →
+                </button>
             </div>
+            
+            <p class="scroll-hint">Scroll or drag to browse public engagement.</p>
             
             <h1 class="separator" id="talks">Talks &amp; Presentations</h1>
             <p class="section-intro">
