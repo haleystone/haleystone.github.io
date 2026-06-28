@@ -595,8 +595,10 @@ a:hover {
 /* One-slide-at-a-time PDF presentation */
 
 .presentation-viewer {
-    width: min(100%, 320px);
-    margin-top: 18px;
+    width: 320px;
+    max-width: 100%;
+    justify-self: start;
+    margin: 18px 0 0;
     overflow: hidden;
     background: var(--surface);
     border: 1px solid var(--line);
@@ -615,9 +617,8 @@ a:hover {
 
 .presentation-slide canvas {
     display: block;
-    width: min(100%, 760px);
+    width: 100%;
     height: auto;
-    margin: 0 auto;
 }
 
 .presentation-controls {
