@@ -595,7 +595,7 @@ a:hover {
 /* One-slide-at-a-time PDF presentation */
 
 .presentation-viewer {
-    width: 320px;
+    width: 520px;
     max-width: 100%;
     justify-self: start;
     margin: 18px 0 0;
