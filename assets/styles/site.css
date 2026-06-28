@@ -615,8 +615,9 @@ a:hover {
 
 .presentation-slide canvas {
     display: block;
-    width: 100%;
+    width: min(100%, 760px);
     height: auto;
+    margin: 0 auto;
 }
 
 .presentation-controls {
