@@ -595,7 +595,7 @@ a:hover {
 /* One-slide-at-a-time PDF presentation */
 
 .presentation-viewer {
-    width: min(100%, 820px);
+    width: min(100%, 520px);
     margin-top: 18px;
     overflow: hidden;
     background: var(--surface);
