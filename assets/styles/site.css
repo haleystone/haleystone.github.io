@@ -61,11 +61,23 @@ a:hover {
 }
 
 .site-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
     color: var(--ink);
     font-family: "Source Serif 4", Georgia, serif;
     font-size: 1.2rem;
     font-weight: 700;
     text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-brand-icon {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 
 .site-nav,
@@ -944,7 +956,15 @@ a:hover {
     .menu-toggle {
         display: block;
     }
-
+    .site-brand {
+    gap: 8px;
+    font-size: 1.05rem;
+    }
+    
+    .site-brand-icon {
+        width: 38px;
+        height: 38px;
+    }
     .site-nav {
         position: absolute;
         top: 64px;
