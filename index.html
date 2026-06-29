@@ -128,25 +128,7 @@
             <div class="publication-shell">
                 <button class="scroll-button scroll-left" type="button" aria-label="Scroll publications left">←</button>
                 <ul class="pub-list reveal">
-<li>
-                    <div class="pub-image-wrap">
-                        <img src="assets/imgs/publications/ssqri.png" alt="Spatial and genomic pathogen network visualisation" class="pub-image"
-                             onerror="this.closest('.pub-image-wrap').classList.add('image-missing'); this.style.display='none';">
-                    </div>
-                    <div class="pub-card-body">
-                    <div class="pub-title">A Probabilistic Framework for Imputing Genetic Distances in Spatiotemporal Pathogen Models</div>
-                    <div class="pub-authors"><b>Haley Stone</b>, Jing Du, Hao Xue, Matthew Scotch, David Heslop, Andreas Züfle, C. Raina MacIntyre, Flora Salim</div>
-                    <div class="pub-venue">ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, 2025</div>
-                    <div class="publinks">
-                        <a href="https://dl.acm.org/doi/abs/10.1145/3748636.3762779" target="_blank">Paper</a>
-                        <a href="https://github.com/cruiseresearchgroup/qri-genetic-distance" target="_blank">Code</a>
-                        <a href="javascript:void(0)" onclick="toggleAbstract('abs1')">Abstract</a>
-                    </div>
-                    <div id="abs1" class="abstract">
-                        Pathogen genome data offers valuable structure for spatial models, but its utility is limited by incomplete sequencing coverage. We propose a probabilistic framework for inferring genetic distances between unsequenced cases and known sequences within defined transmission chains, using time-aware evolutionary distance modeling. The method estimates pairwise divergence from collection dates and observed genetic distances, enabling biologically plausible imputation grounded in observed divergence patterns, without requiring sequence alignment or known transmission chains. Applied to highly pathogenic avian influenza A/H5 cases in wild birds in the United States, this approach supports scalable, uncertainty-aware augmentation of genomic datasets and enhances the integration of evolutionary information into spatiotemporal modeling workflows.
-                    </div>
-                
-                    </div></li>
+
 <li>
                     <div class="pub-image-wrap">
                         <img src="assets/imgs/publications/blue.png" alt="Genomic-informed graph learning framework" class="pub-image"
@@ -184,6 +166,25 @@
                        Estimating population-level prevalence and transmission dynamics of wildlife pathogens can be challenging, partly because surveillance data is sparse, detection-driven, and unevenly sequenced. Using highly pathogenic avian influenza A/H5 clade 2.3.4.4b as a case study, we develop zooNet, a graph-based epidemiological framework that integrates mechanistic transmission simulation, metadata-driven genetic distance imputation, and spatiotemporal graph learning to reconstruct outbreak dynamics from incomplete observations. Applied to wild bird surveillance data from the United States during 2022, zooNet recovered coherent spatiotemporal structure despite intermittent detections, revealing sustained regional circulation across multiple migratory flyways. The framework consistently identified counties with ongoing transmission weeks to months before confirmed detections, including persistent activity in northeastern regions prior to documented re-emergence. These signals were detectable even in areas with sparse sequencing and irregular reporting. 
                         These results show that explicitly representing ecological processes and inferred genomic connectivity within a unified graph structure allows persistence and spatial risk structure to be inferred from detection-driven wildlife surveillance data.
 
+                    </div>
+                
+                    </div></li>
+                    <li>
+                    <div class="pub-image-wrap">
+                        <img src="assets/imgs/publications/ssqri.png" alt="Spatial and genomic pathogen network visualisation" class="pub-image"
+                             onerror="this.closest('.pub-image-wrap').classList.add('image-missing'); this.style.display='none';">
+                    </div>
+                    <div class="pub-card-body">
+                    <div class="pub-title">A Probabilistic Framework for Imputing Genetic Distances in Spatiotemporal Pathogen Models</div>
+                    <div class="pub-authors"><b>Haley Stone</b>, Jing Du, Hao Xue, Matthew Scotch, David Heslop, Andreas Züfle, C. Raina MacIntyre, Flora Salim</div>
+                    <div class="pub-venue">ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, 2025</div>
+                    <div class="publinks">
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3748636.3762779" target="_blank">Paper</a>
+                        <a href="https://github.com/cruiseresearchgroup/qri-genetic-distance" target="_blank">Code</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs1')">Abstract</a>
+                    </div>
+                    <div id="abs1" class="abstract">
+                        Pathogen genome data offers valuable structure for spatial models, but its utility is limited by incomplete sequencing coverage. We propose a probabilistic framework for inferring genetic distances between unsequenced cases and known sequences within defined transmission chains, using time-aware evolutionary distance modeling. The method estimates pairwise divergence from collection dates and observed genetic distances, enabling biologically plausible imputation grounded in observed divergence patterns, without requiring sequence alignment or known transmission chains. Applied to highly pathogenic avian influenza A/H5 cases in wild birds in the United States, this approach supports scalable, uncertainty-aware augmentation of genomic datasets and enhances the integration of evolutionary information into spatiotemporal modeling workflows.
                     </div>
                 
                     </div></li>
