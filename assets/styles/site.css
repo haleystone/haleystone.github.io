@@ -83,12 +83,12 @@ a:hover {
 
 .site-header .site-brand-icon {
     display: block;
-    flex: 0 0 48px;
+    flex: 0 0 64px;
 
-    width: 48px !important;
-    height: 48px !important;
-    max-width: 48px !important;
-    max-height: 48px !important;
+    width: 64px !important;
+    height: 64px !important;
+    max-width: 64px !important;
+    max-height: 64px !important;
 
     object-fit: contain;
     margin: 0;
