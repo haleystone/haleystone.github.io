@@ -147,7 +147,29 @@
             <div class="publication-shell">
                 <button class="scroll-button scroll-left" type="button" aria-label="Scroll publications left">←</button>
                 <ul class="pub-list reveal">
-
+<li>
+                    <div class="pub-image-wrap">
+                        <img src="assets/imgs/publications/GNN_Hostpred.png" alt="GNN Host Prediction" class="pub-image"
+                             onerror="this.closest('.pub-image-wrap').classList.add('image-missing'); this.style.display='none';">
+                    </div>
+                    <div class="pub-card-body">
+                    <div class="pub-title">Phylogenies as graphs: structured neural networks improve host origin predictions from paramyxovirus sequences</div>
+                    <div class="pub-authors"> James C Herzig, <b>Haley Stone</b>,  Liam Brierley</div>
+                    <div class="pub-venue">bioRxiv preprint, 2026</div>
+                    <div class="publinks">
+                        <a href="https://www.biorxiv.org/content/10.64898/2026.09.18.752634v1" target="_blank">Paper</a>
+                        <a href="https://github.com/vibelab-co-uk/GNN-host-prediction" target="_blank">Code</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs7')">Abstract</a>
+                    </div>
+                    <div id="abs7" class="abstract">
+                       Accurately identifying the host of a virus from its genome sequence is a task with important applications in zoonotic disease surveillance and filling data gaps for metagenomic sampling. Machine learning approaches have seen broad application in making host predictions directly from viral genome sequences. 
+                        However, most host prediction models do not incorporate information on viral phylogeny, which is strongly correlated with both genome composition and host. We apply a novel graph neural network (GNN) approach which explicitly represents viral phylogeny in model architecture to predict hosts of origin within the paramyxoviruses. 
+                        We conduct rigorous benchmarking against non-structured neural networks and predictions made using phylogeny alone, showing that GNNs carry distinct advantages over other methods when making predictions where training data is sparse. 
+                        Validation across different phylogenetic scales shows that simple phylogenetic prediction is effective in many applications and that phylogeny contributes a large proportion of the predictive power of host prediction models, with genome compositional features providing additional power only for specific predictions outside the range of the training data.
+                        This novel modelling approach and model validation framework are flexible and can be applied to other viral families.
+                    </div>
+                
+                    </div></li>
 <li>
                     <div class="pub-image-wrap">
                         <img src="assets/imgs/publications/blue.png" alt="Genomic-informed graph learning framework" class="pub-image"
@@ -160,9 +182,9 @@
                     <div class="publinks">
                         <a href="https://arxiv.org/pdf/2505.22692" target="_blank">Paper</a>
                         <a href="https://github.com/cruiseresearchgroup/BLUE" target="_blank">Code</a>
-                        <a href="javascript:void(0)" onclick="toggleAbstract('abs2')">Abstract</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs6')">Abstract</a>
                     </div>
-                    <div id="abs2" class="abstract">
+                    <div id="abs6" class="abstract">
                         Accurate forecasting of Avian Influenza Virus (AIV) outbreaks within wild bird populations necessitates models that account for complex, multi-scale transmission patterns driven by diverse factors. While conventional spatiotemporal epidemic models are robust for human-centric diseases, they rely on spatial homophily and diffusive transmission between geographic regions. This simplification is incomplete for AIV as it neglects valuable genomic information critical for capturing dynamics like high-frequency reassortment and lineage turnover at the case level (e.g., genetic descent across regions), which are essential for understanding AIV spread. To address these limitations, we systematically formulate the AIV forecasting problem and propose a Bi-Layer genomic-aware heterogeneous graph fusion pipeline. This pipeline integrates genetic, spatial, and ecological data to achieve highly accurate outbreak forecasting. It 1) defines a multi-layered graph structure incorporating information from diverse sources and multiple layers (case and location), 2) applies cross-relation smoothing to smooth information flow across edge types, 3) performs graph fusion that preserves critical structural patterns backed by theoretical spectral guarantees, and 4) forecasts future outbreaks using an autoregressive graph sequence model to capture transmission dynamics. To support research, we release the Avian-US dataset, which provides comprehensive genetic, spatial, and ecological data on US avian influenza outbreaks. BLUE demonstrates superior performance over existing baselines, highlighting the efficacy of integrating multi-layer information for infectious disease forecasting. The code is available at: this https URL.
 
                     </div>
@@ -179,9 +201,9 @@
                     <div class="pub-venue">arXiv preprint, 2026</div>
                     <div class="publinks">
                         <a href="https://arxiv.org/abs/2601.09738" target="_blank">Paper</a>
-                        <a href="javascript:void(0)" onclick="toggleAbstract('abs3')">Abstract</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs5')">Abstract</a>
                     </div>
-                    <div id="abs3" class="abstract">
+                    <div id="abs5" class="abstract">
                        Estimating population-level prevalence and transmission dynamics of wildlife pathogens can be challenging, partly because surveillance data is sparse, detection-driven, and unevenly sequenced. Using highly pathogenic avian influenza A/H5 clade 2.3.4.4b as a case study, we develop zooNet, a graph-based epidemiological framework that integrates mechanistic transmission simulation, metadata-driven genetic distance imputation, and spatiotemporal graph learning to reconstruct outbreak dynamics from incomplete observations. Applied to wild bird surveillance data from the United States during 2022, zooNet recovered coherent spatiotemporal structure despite intermittent detections, revealing sustained regional circulation across multiple migratory flyways. The framework consistently identified counties with ongoing transmission weeks to months before confirmed detections, including persistent activity in northeastern regions prior to documented re-emergence. These signals were detectable even in areas with sparse sequencing and irregular reporting. 
                         These results show that explicitly representing ecological processes and inferred genomic connectivity within a unified graph structure allows persistence and spatial risk structure to be inferred from detection-driven wildlife surveillance data.
 
@@ -200,9 +222,9 @@
                     <div class="publinks">
                         <a href="https://dl.acm.org/doi/abs/10.1145/3748636.3762779" target="_blank">Paper</a>
                         <a href="https://github.com/cruiseresearchgroup/qri-genetic-distance" target="_blank">Code</a>
-                        <a href="javascript:void(0)" onclick="toggleAbstract('abs1')">Abstract</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs4')">Abstract</a>
                     </div>
-                    <div id="abs1" class="abstract">
+                    <div id="abs4" class="abstract">
                         Pathogen genome data offers valuable structure for spatial models, but its utility is limited by incomplete sequencing coverage. We propose a probabilistic framework for inferring genetic distances between unsequenced cases and known sequences within defined transmission chains, using time-aware evolutionary distance modeling. The method estimates pairwise divergence from collection dates and observed genetic distances, enabling biologically plausible imputation grounded in observed divergence patterns, without requiring sequence alignment or known transmission chains. Applied to highly pathogenic avian influenza A/H5 cases in wild birds in the United States, this approach supports scalable, uncertainty-aware augmentation of genomic datasets and enhances the integration of evolutionary information into spatiotemporal modeling workflows.
                     </div>
                 
@@ -219,9 +241,9 @@
                     <div class="publinks">
                         <a href="https://www.jasss.org/29/2/7.html" target="_blank">Paper</a>
                         <a href="https://github.com/BREATHE-UNSW/AgedCareContactMatrix" target="_blank">Code</a>
-                        <a href="javascript:void(0)" onclick="toggleAbstract('abs4')">Abstract</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs3')">Abstract</a>
                     </div>
-                    <div id="abs4" class="abstract">
+                    <div id="abs3" class="abstract">
                         Understanding infectious disease transmission in institutional settings requires modelling approaches that can represent how contacts arise from structured routines, roles, and spatial constraints. In aged care facilities, interactions are shaped by care delivery processes, staff scheduling, and resident mobility, producing contact patterns that differ fundamentally from those assumed in population-level models. However, standard contact matrices used in epidemiological modelling are typically derived from general population surveys and do not capture these institutional mechanisms.
                         This study develops an agent-based modelling framework to generate high-resolution contact matrices for aged care facilities by simulating task-driven behaviour, staff workflows, and movement through shared spaces. Rather than prescribing contact structure, interactions emerge endogenously from scheduled activities and proximity during task execution. The model is parameterised using collected activity-diary data from aged care workers and is implemented with behavioural logic decoupled from the physical layout, allowing adaptation to alternative facility designs without modifying core mechanisms.
                         Simulation results show pronounced heterogeneity in contact patterns across resident care levels and staff shifts. Low and medium care residents exhibited substantially higher contact frequencies than high care residents, while staff working day and afternoon shifts accounted for the majority of resident–staff interactions. Temporal analyses revealed clustering of contacts around structured daily routines, including meals and communal activities. Integrating a proximity-based airborne transmission component parameterised for SARS-CoV-2 demonstrated that transmission risk was concentrated during high-contact shifts and among more mobile resident groups. Vaccination scenarios reduced predicted transmission substantially, with the greatest reductions observed when both staff and residents were vaccinated.
@@ -244,9 +266,9 @@
                     <div class="publinks">
                         <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014316" target="_blank">Paper</a>
                         <a href="https://github.com/DENVGenomics/DENcode" target="_blank">Code</a>
-                        <a href="javascript:void(0)" onclick="toggleAbstract('abs5')">Abstract</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs2')">Abstract</a>
                     </div>
-                    <div id="abs5" class="abstract">
+                    <div id="abs2" class="abstract">
                         Dengue virus transmission networks are often only partially resolved, due to gaps in sampling, unobserved mosquito-mediated transmission, and using methods (phylogenetics) that describe evolutionary relatedness but not explicit, probabilistic transmission links between individual infections. We developed DENcode, a framework to estimate the relative likelihood of vector-mediated transmission between pairs of dengue cases by combining a temperature- and time-modulated epidemiological kernel, which captures the extrinsic incubation period and human infectiousness, with a phylogenetically informed genetic similarity kernel derived from patristic distances between viral haplotypes or consensus sequences. Validation with a real-life dataset of 90 dengue infections sampled from Colombo, Sri Lanka between 2017 - 2020 and sequenced to resolve within-host haplotypes, DENcode estimates were stable across 100 Monte Carlo iterations, yielding narrow credible intervals (median width <0.001) and consistent top-ranked transmission pairs. Sensitivity analyses using ablation experiments showed that removing either the genetic or epidemiological component substantially altered the distribution of linkage probabilities, 
                             indicating that both contribute meaningfully to the inferred transmission structure. Serotype-specific transmission networks constructed from pairwise linkage probabilities from DENcode were analysed using degree- and path-based centrality measures at probability thresholds of 0.1 and 0.5, revealing relative importance of cases to disease transmission within the community. Haplotype-derived networks were more informative than consensus-based networks (x 3.6 and x 1.6 times more edges for DENV2 and 3 respectively). DENcode is a robust framework to explore dengue transmission within a community that provides an output of network of transmission probabilities informed by pathogen genetic similarity and clinical epidemiological parameters.
                     </div>
@@ -264,9 +286,9 @@
                     <div class="pub-venue">GeoHealth (AGU), 2025 • 2025 GeoHealth Editors' Choice Award</div>
                     <div class="publinks">
                         <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GH001296" target="_blank">Paper</a>
-                        <a href="javascript:void(0)" onclick="toggleAbstract('abs6')">Abstract</a>
+                        <a href="javascript:void(0)" onclick="toggleAbstract('abs1')">Abstract</a>
                     </div>
-                    <div id="abs6" class="abstract">
+                    <div id="abs1" class="abstract">
                         This study presents the interplay between wild bird migrations and global poultry trade in the unprecedented spread of highly pathogenic avian influenza, particularly the H5N1 clade 2.3.4.4b strain, 
                         across the world and diverse ecosystems from 2020 to 2023. We theorized the role of migratory birds in spreading pathogens as various wild bird species traverse major flyways between the northern and 
                         southern hemispheres. Simultaneously, we analyzed the global poultry trade data to assess its role in H5N1's anthropogenic spread, highlighting how human economic activities intersect with natural avian 
